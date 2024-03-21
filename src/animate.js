@@ -14,7 +14,7 @@ const animation = () => {
   }
   btn.addEventListener("click", animfunc)
   input.addEventListener("keydown", (e) => {
-    if (e.keyCode === "Enter") {
+    if (e.key === "Enter") {
       animfunc()
     }
   })
