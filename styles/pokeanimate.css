@@ -1,0 +1,15 @@
+@keyframes pokeanim {
+  from {
+    transform: translatex(10rem);
+  }
+  to {
+    transform: translatex(0rem);
+  }
+}
+
+.pokeanim {
+  animation-name: pokeanim;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  transition: all 3sc;
+}

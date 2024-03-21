@@ -106,6 +106,7 @@ button:hover {
 }
 #right {
   width: 50%;
+  overflow: hidden;
 }
 .types {
   font-size: 1rem;
