@@ -49,10 +49,19 @@ input {
 }
 button {
   width: 20%;
-  background-color: orangered;
+  background-color: rgb(209, 85, 39);
   color: black;
   font-size: 1.2rem;
   border-radius: 100vw;
+  border: 2px solid orangered;
+  transition: all 0.3s;
+}
+button:hover {
+  background-color: rgb(49, 129, 49);
+  color: black;
+  font-size: 1.2rem;
+  border-radius: 100vw;
+  border: 2px solid orangered;
 }
 #search-result {
   margin-block: 2rem;
@@ -81,7 +90,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .name {
   text-align: center;
@@ -93,7 +102,7 @@ button {
   height: 40%;
   border: 2px solid orangered;
   gap: 0.2rem;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 #right {
   width: 50%;
