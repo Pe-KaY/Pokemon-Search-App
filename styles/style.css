@@ -5,6 +5,9 @@
   margin: 0;
   padding: 0;
 }
+html {
+  color-scheme: light dark;
+}
 
 body {
   color: white;
@@ -110,7 +113,6 @@ button:hover {
 }
 .types {
   font-size: 1rem;
-  display: flex;
   background-color: black;
   border: 2px solid green;
   color: white;

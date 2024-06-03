@@ -22,17 +22,22 @@ const fetcham = () => {
       const resolve = await fetch(
         "https://pokeapi-proxy.freecodecamp.rocks/api/pokemon"
       )
-      if (!resolve) {
+      if (!resolve.ok) {
         throw new Error("The server cant be reached")
       }
       const data = await resolve.json()
       alpokeArr = data.results
+      if (input.value === "25") {
+        searchBtn.click()
+      }
     } catch (error) {
       console.error(`ERROR : ${error}`)
     }
   }
 
-  fetchAllPokemon()
+  window.onload = () => {
+    fetchAllPokemon()
+  }
   //this function fetch the matching id or name from the alpokeArr which contains all the pokemon
   const fetchPokefromAll = (idname) => {
     const isNumber = (value) => (isNaN(value) ? value : parseInt(value))
@@ -55,6 +60,9 @@ const fetcham = () => {
     const pokeUrl = url
     try {
       const pokemon = await fetch(pokeUrl)
+      if (!pokemon.ok) {
+        throw new Error("Failed to fetch Pokémon")
+      }
       const data = await pokemon.json()
       pokemonName.textContent = `${data.name.toUpperCase()}`
       id.textContent = `#${data.id}`
@@ -94,6 +102,7 @@ const fetcham = () => {
   const launch = () => {
     infoTypes.innerHTML = ""
     const userInput = inputChecker(input.value)
+    input.value = userInput
     if (userInput === "") {
       alert("Enter a Pokemon Name or ID")
       return
